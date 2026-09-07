@@ -1,4 +1,9 @@
-"""Test cases cho Bài 007: Nghịch đảo"""
+﻿import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+
+"""Test cases cho BÃ i 007: Nghá»‹ch Ä‘áº£o"""
 
 import sys
 from io import StringIO
@@ -7,7 +12,7 @@ import pytest
 
 
 def test_basic():
-    """Test với a = 3."""
+    """Test vá»›i a = 3."""
     from solution import solve
 
     sys.stdin = StringIO("3\n")
@@ -19,7 +24,7 @@ def test_basic():
 
 
 def test_one():
-    """Test với a = 1."""
+    """Test vá»›i a = 1."""
     from solution import solve
 
     sys.stdin = StringIO("1\n")
@@ -31,7 +36,7 @@ def test_one():
 
 
 def test_negative():
-    """Test với a âm."""
+    """Test vá»›i a Ã¢m."""
     from solution import solve
 
     sys.stdin = StringIO("-4\n")
@@ -43,7 +48,7 @@ def test_negative():
 
 
 def test_decimal():
-    """Test với a là số thập phân."""
+    """Test vá»›i a lÃ  sá»‘ tháº­p phÃ¢n."""
     from solution import solve
 
     sys.stdin = StringIO("0.5\n")
@@ -56,3 +61,4 @@ def test_decimal():
 
 if __name__ == "__main__":
     pytest.main([__file__, "-v"])
+

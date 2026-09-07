@@ -1,30 +1,32 @@
-﻿import sys
+"""Test cases cho Bài 014: Tính tổng hàng đơn vị"""
+
+import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-"""Test cases cho BÃ i 003: PhÃ©p toÃ¡n nhÃ¢n"""
-import sys
 from io import StringIO
 
 import pytest
 
 
-def test_positive():
-    """Test vá»›i a dÆ°Æ¡ng."""
+def test_basic():
+    """Test với a = 123, b = 456."""
     from solution import solve
-    sys.stdin = StringIO("4\n")
+
+    sys.stdin = StringIO("123 456\n")
     captured = StringIO()
     sys.stdout = captured
     solve()
     sys.stdout = sys.__stdout__
-    assert captured.getvalue().strip() == "12"
+    assert captured.getvalue().strip() == "9"
 
 
-def test_zero():
-    """Test vá»›i a = 0."""
+def test_zeros():
+    """Test với a = 0, b = 0."""
     from solution import solve
-    sys.stdin = StringIO("0\n")
+
+    sys.stdin = StringIO("0 0\n")
     captured = StringIO()
     sys.stdout = captured
     solve()
@@ -32,28 +34,29 @@ def test_zero():
     assert captured.getvalue().strip() == "0"
 
 
-def test_negative():
-    """Test vá»›i a Ã¢m."""
-    from solution import solve
-    sys.stdin = StringIO("-3\n")
-    captured = StringIO()
-    sys.stdout = captured
-    solve()
-    sys.stdout = sys.__stdout__
-    assert captured.getvalue().strip() == "-9"
-
-
 def test_large():
-    """Test vá»›i a lá»›n."""
+    """Test với số lớn."""
     from solution import solve
-    sys.stdin = StringIO("1000000000\n")
+
+    sys.stdin = StringIO("1000000000 999999999\n")
     captured = StringIO()
     sys.stdout = captured
     solve()
     sys.stdout = sys.__stdout__
-    assert captured.getvalue().strip() == "3000000000"
+    assert captured.getvalue().strip() == "9"
+
+
+def test_same_units():
+    """Test với cùng hàng đơn vị."""
+    from solution import solve
+
+    sys.stdin = StringIO("27 37\n")
+    captured = StringIO()
+    sys.stdout = captured
+    solve()
+    sys.stdout = sys.__stdout__
+    assert captured.getvalue().strip() == "14"
 
 
 if __name__ == "__main__":
     pytest.main([__file__, "-v"])
-

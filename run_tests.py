@@ -9,13 +9,14 @@ Usage:
     python run_tests.py 04 easy 019      # Problem 019 cụ thể
 """
 
-import sys
-import os
 import subprocess
+import sys
 from pathlib import Path
 
 
-def find_test_files(base, filter_topic=None, filter_difficulty=None, filter_problem=None):
+def find_test_files(
+    base, filter_topic=None, filter_difficulty=None, filter_problem=None
+):
     """Tìm tất cả test_solution.py phù hợp."""
     tests = []
     for topic in sorted(base.glob("0*")):
@@ -61,7 +62,7 @@ def main():
         sys.exit(1)
 
     print(f"Tim thay {len(tests)} test file.")
-    print(f"{'='*60}")
+    print(f"{'=' * 60}")
 
     # Chay tung test mot de tranh xung突 module name
     passed = 0
@@ -73,6 +74,7 @@ def main():
             [sys.executable, "-m", "pytest", str(test_file), "-v", "-q"],
             cwd=str(base),
             capture_output=False,
+            check=True,
         )
         if result.returncode == 0:
             passed += 1
@@ -81,7 +83,7 @@ def main():
         else:
             errors += 1
 
-    print(f"\n{'='*60}")
+    print(f"\n{'=' * 60}")
     print(f" Ket qua: {passed} pass, {failed} fail, {errors} error")
 
 

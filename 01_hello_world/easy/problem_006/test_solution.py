@@ -1,4 +1,9 @@
-"""Test cases cho Bài 006: Căn bậc 2"""
+﻿import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+
+"""Test cases cho BÃ i 006: CÄƒn báº­c 2"""
 
 import sys
 from io import StringIO
@@ -7,7 +12,7 @@ import pytest
 
 
 def test_perfect_square():
-    """Test với số chính phương."""
+    """Test vá»›i sá»‘ chÃ­nh phÆ°Æ¡ng."""
     from solution import solve
 
     sys.stdin = StringIO("16\n")
@@ -19,7 +24,7 @@ def test_perfect_square():
 
 
 def test_non_square():
-    """Test với số không phải chính phương."""
+    """Test vá»›i sá»‘ khÃ´ng pháº£i chÃ­nh phÆ°Æ¡ng."""
     from solution import solve
 
     sys.stdin = StringIO("10\n")
@@ -31,7 +36,7 @@ def test_non_square():
 
 
 def test_zero():
-    """Test với a = 0."""
+    """Test vá»›i a = 0."""
     from solution import solve
 
     sys.stdin = StringIO("0\n")
@@ -43,7 +48,7 @@ def test_zero():
 
 
 def test_one():
-    """Test với a = 1."""
+    """Test vá»›i a = 1."""
     from solution import solve
 
     sys.stdin = StringIO("1\n")
@@ -56,3 +61,4 @@ def test_one():
 
 if __name__ == "__main__":
     pytest.main([__file__, "-v"])
+

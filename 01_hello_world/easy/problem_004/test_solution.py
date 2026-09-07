@@ -1,4 +1,9 @@
-"""Test cases cho Bài 004: Phép toán chia"""
+﻿import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+
+"""Test cases cho BÃ i 004: PhÃ©p toÃ¡n chia"""
 import sys
 from io import StringIO
 
@@ -6,7 +11,7 @@ import pytest
 
 
 def test_divisible():
-    """Test với a chia hết cho 3."""
+    """Test vá»›i a chia háº¿t cho 3."""
     from solution import solve
     sys.stdin = StringIO("9\n")
     captured = StringIO()
@@ -17,7 +22,7 @@ def test_divisible():
 
 
 def test_not_divisible():
-    """Test với a không chia hết cho 3."""
+    """Test vá»›i a khÃ´ng chia háº¿t cho 3."""
     from solution import solve
     sys.stdin = StringIO("10\n")
     captured = StringIO()
@@ -28,7 +33,7 @@ def test_not_divisible():
 
 
 def test_negative():
-    """Test với a âm."""
+    """Test vá»›i a Ã¢m."""
     from solution import solve
     sys.stdin = StringIO("-10\n")
     captured = StringIO()
@@ -39,7 +44,7 @@ def test_negative():
 
 
 def test_zero():
-    """Test với a = 0."""
+    """Test vá»›i a = 0."""
     from solution import solve
     sys.stdin = StringIO("0\n")
     captured = StringIO()
@@ -51,3 +56,4 @@ def test_zero():
 
 if __name__ == "__main__":
     pytest.main([__file__, "-v"])
+

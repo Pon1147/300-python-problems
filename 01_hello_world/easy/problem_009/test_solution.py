@@ -1,6 +1,10 @@
 """Test cases cho Bài 009: Tính giá trị biểu thức 2"""
 
 import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+
 from io import StringIO
 
 import pytest

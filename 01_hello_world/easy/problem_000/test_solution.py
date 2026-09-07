@@ -1,6 +1,10 @@
 """Test cases cho Bài 000: A + B - C"""
 
 import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+
 from io import StringIO
 
 import pytest

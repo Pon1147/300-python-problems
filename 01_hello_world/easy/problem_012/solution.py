@@ -1,8 +1,9 @@
 """
-Bài {number}: {title}
-Chủ đề: {topic}
-Độ khó: {difficulty}
+Bài 012: Tìm chữ số
+Chủ đề: Phép toán cơ bản
+Độ khó: Easy
 """
+
 import sys
 
 if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
@@ -10,8 +11,10 @@ if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
 
 
 def solve():
-    # TODO: Viết code giải bài tập tại đây
-    pass
+    a = int(input())
+    units = a % 10  # hàng đơn vị
+    tens = a // 10  # hàng chục
+    print(f"{units} {tens}")
 
 
 def main():

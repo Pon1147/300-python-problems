@@ -1,7 +1,7 @@
 """
-Bài {number}: {title}
-Chủ đề: {topic}
-Độ khó: {difficulty}
+Bài 014: Tính tổng hàng đơn vị
+Chủ đề: Phép toán cơ bản
+Độ khó: Easy
 """
 import sys
 

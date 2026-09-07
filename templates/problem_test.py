@@ -1,10 +1,15 @@
 """
 Test cases cho Bài {number}: {title}
 """
+import sys
+from pathlib import Path
+
+# Thêm folder hiện tại vào sys.path để import solution.py
+sys.path.insert(0, str(Path(__file__).parent))
+
 import pytest
 from unittest.mock import patch
 import io
-import sys
 
 
 # ---------- Test cases ----------
